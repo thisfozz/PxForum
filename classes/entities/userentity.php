@@ -68,10 +68,6 @@ class UserEntity {
 
     function IsDeleted():bool{
         return $this->is_deleted;
-    } 
-    
-    public function SetEmail(string $email): void {
-        $this->email = $email;
     }
 }
 
