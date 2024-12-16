@@ -20,7 +20,7 @@ $avatar = isset($_COOKIE["avatar"]) ? $_COOKIE["avatar"] : '';
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <?php if (!isset($_COOKIE["username"])): ?>
+                <?php if (!isset($_COOKIE["user_login"]) && !isset($_COOKIE["user_email"])): ?>
                     <li class="nav-item">
                         <a class="btn btn-outline-light rounded-pill me-2" href="/register">Register</a>
                     </li>
@@ -30,8 +30,8 @@ $avatar = isset($_COOKIE["avatar"]) ? $_COOKIE["avatar"] : '';
                 <?php else: ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="<?php $avatar ?>" alt="User Avatar" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
-                            <?php echo htmlspecialchars($_COOKIE["username"]); ?>
+                            <img src="<?php echo $avatar ?>" alt="User Avatar" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                            <?php echo htmlspecialchars($_COOKIE["user_login"]); ?>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="userDropdown">
                             <li>

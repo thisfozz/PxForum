@@ -40,8 +40,7 @@ if (!isset($_POST["regbtn"])) {
         $result = $user->register($userEntity);
 
         if($result['success']){
-            echo '<p class="text-success text-center">' . $result['message'] . '</p>';
-            echo '<a href="/login" class="btn btn-link d-block text-center">Go to Login</a>';
+            header('Location: /home');
         } else{
             echo '<p class="text-danger text-center">' . $result['message'] . '</p>';
             echo '<a href="/register" class="btn btn-link d-block text-center">Try Again</a>';
